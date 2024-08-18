@@ -1,0 +1,26 @@
+options all -indexes 
+Options +FollowSymLinks
+RewriteEngine on
+
+Rewriterule	^crear(.*)$ crear.php [l]
+Rewriterule	^top(.*)$ top.php [l]
+
+Rewriterule	^creando(.*)$ creando.php [l]
+Rewriterule	^agregando(.*)$ agregando.php [l]
+Rewriterule	^editando(.*)$ editando.php [l]
+Rewriterule	^dir(.*)$ directorio.php [l]
+Rewriterule	^mis-comunidades/(.*)\.(.*)$ mis-comunidades.php?sort_by=$1&pagina=$2 [l]
+Rewriterule	^mis-comunidades/(.*)/$ mis-comunidades.php?sort_by=$1 [l]
+Rewriterule	^mis-comunidades(.*)$ mis-comunidades.php [l]
+Rewriterule	^buscador/comunidades(.*)$ buscador-comunidades.php [l]
+Rewriterule	^buscador/temas(.*)$ buscador-temas.php [l]
+Rewriterule	^top(.*)$ top.php [l]
+Rewriterule	^pagina.(.*)$ index.php?pagina=$1 [l]
+Rewriterule	^home/(.*)/pagina.(.*)$ index.php?categoria=$1&pagina=$2 [l]
+Rewriterule	^home/(.*)/$ index.php?categoria=$1 [l]
+
+Rewriterule ^(.*)/(.*)/(.*)\.html$ index.php?shortname=$1&temaid=$2&titulo=$3 [l]
+
+Rewriterule ^(.*)/(.*)/(.*)/$ index.php?shortname=$1&accion=$2&temaid=$3 [l]
+Rewriterule ^(.*)/(.*)/$ index.php?shortname=$1&accion=$2 [l]
+Rewriterule ^(.*)/$ index.php?shortname=$1 [l]

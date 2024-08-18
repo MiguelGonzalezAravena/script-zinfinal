@@ -1,0 +1,23 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+Rewriterule ^posts/(.*)/(.*)\.(.*)/(.*)\.html$ post.php?categoria=$1&id=$2&pagina=$3&titulo=$4
+Rewriterule ^posts/(.*)/(.*)/(.*)\.html$ post.php?categoria=$1&id=$2&titulo=$3
+Rewriterule ^posts/(.*)/pagina(.+)$ index.php?categoria=$1&pagina=$2
+Rewriterule ^posts/(.*)/$ index.php?categoria=$1 [L]
+
+Rewriterule ^tags/(.*)$ buscador-tags.php?q=$1
+
+Rewriterule ^mensajes/leer/(.*)$ mensajes.php?data=leer&mensaje=$1
+Rewriterule ^mensajes/a/(.*)$ mensajes.php?data=redactar&a=$1
+
+Rewriterule ^agregar/(.*)$ agregar.form
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule .*[^/]$ $0/ [L]
+Rewriterule ^(.*)/(.*)/(.*)/(.*)/$ $1.php?data=$2&data2=$3&data3=$4 [L]
+Rewriterule ^(.*)/(.*)/(.*)/$ $1.php?data=$2&data2=$3 [L]
+Rewriterule ^(.*)/(.*)/$ $1.php?data=$2&%{QUERY_STRING} [L]
+Rewriterule ^(.*)/$ $1.php [L]
+
+ErrorDocument 404 /404.php

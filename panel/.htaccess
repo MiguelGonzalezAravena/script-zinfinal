@@ -1,0 +1,9 @@
+RewriteEngine on
+
+Rewriterule ^mod/(.*)/(.*)/(.*)/$ index.php?seccion=$1&ss=$2&dato=$3
+Rewriterule ^mod/(.*)/(.*)/$ index.php?seccion=$1&ss=$2
+Rewriterule ^mod/(.*)/$ index.php?seccion=$1
+
+Rewriterule ^admin/(.*)/(.*)/$ index.php?seccion=admin&ss=$1&dato=$2
+Rewriterule ^admin/(.*)/$ index.php?seccion=admin&ss=$1
+Rewriterule ^admin(.*)$ index.php?seccion=admin

@@ -1,0 +1,2 @@
+   Su denuncia ha sido enviada con &eacute;xito.<br><br>Pr&oacute;ximamente la administraci&oacute;n del sitio estar&aacute; revis&aacute;ndola.<br><br>
+De ser necesario nos pondremos en contacto con Ud.<br><br>Muchas gracias.
